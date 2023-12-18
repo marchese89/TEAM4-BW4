@@ -14,4 +14,36 @@ public class Subscription extends Emittable{
     @Enumerated(EnumType.STRING)
     private SubscriptionType subscriptionType;
 
+    public Subscription() {
+    }
+
+    public Subscription(User user, SubscriptionType subscriptionType) {
+        this.user = user;
+        this.subscriptionType = subscriptionType;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public SubscriptionType getSubscriptionType() {
+        return subscriptionType;
+    }
+
+    public void setSubscriptionType(SubscriptionType subscriptionType) {
+        this.subscriptionType = subscriptionType;
+    }
+
+    @Override
+    public String toString() {
+        return "Subscription{ issueDate=" + super.getIssueDate()+
+                "user=" + user +
+                ", subscriptionType=" + subscriptionType +
+                ", IssueDate=" + IssueDate +
+                "} " + super.toString();
+    }
 }
