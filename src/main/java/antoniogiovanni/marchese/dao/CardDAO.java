@@ -1,42 +1,42 @@
 package antoniogiovanni.marchese.dao;
 
-import antoniogiovanni.marchese.entities.Emittable;
+import antoniogiovanni.marchese.entities.Card;
 import antoniogiovanni.marchese.entities.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-public class EmittableDAO {
+public class CardDAO {
     private final EntityManager em;
 
-    public EmittableDAO(EntityManager em) {
+    public CardDAO(EntityManager em) {
         this.em = em;
     }
 
-    public void save(Emittable emittable) {
+    public void save(Card card) {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
-        em.persist(emittable);
+        em.persist(card);
         transaction.commit();
-        System.out.println("Emittable " + emittable.getId() + " added!");
+        System.out.println("Card " + card.getCardNumber() + " added!");
     }
 
-    public Emittable findById(long id) {
-        return em.find(Emittable.class,id);
+    public Card findById(long id) {
+        return em.find(Card.class,id);
     }
 
 
     public void findByIdAndDelete(long id) {
-        Emittable found = this.findById(id);
+        Card found = this.findById(id);
 
         if (found != null) {
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
             em.remove(found);
             transaction.commit();
-            System.out.println("Emittable " + found.getId() + " deleted!");
+            System.out.println("Card " + found.getCardNumber() + " deleted!");
         } else {
-            System.out.println("Emittable with id " + id + " not found");
+            System.out.println("Card with id " + id + " not found");
         }
 
     }
