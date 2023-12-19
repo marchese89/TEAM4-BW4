@@ -52,7 +52,7 @@ public class Means {
         this.meansType = meansType;
     }
 
-    public void setRoute ( Route routes ) {
+    public void setRoute ( Route route ) {
         this.route = route;
     }
 

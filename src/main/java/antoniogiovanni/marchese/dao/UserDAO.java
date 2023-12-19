@@ -1,42 +1,42 @@
 package antoniogiovanni.marchese.dao;
 
-import antoniogiovanni.marchese.entities.Emittable;
 import antoniogiovanni.marchese.entities.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 
-public class EmittableDAO {
+public class UserDAO {
+
     private final EntityManager em;
 
-    public EmittableDAO(EntityManager em) {
+    public UserDAO(EntityManager em) {
         this.em = em;
     }
 
-    public void save(Emittable emittable) {
+    public void save(User user) {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
-        em.persist(emittable);
+        em.persist(user);
         transaction.commit();
-        System.out.println("Emittable " + emittable.getId() + " added!");
+        System.out.println("User " + user.getName() + " added!");
     }
 
-    public Emittable findById(long id) {
-        return em.find(Emittable.class,id);
+    public User findById(long id) {
+        return em.find(User.class,id);
     }
 
 
     public void findByIdAndDelete(long id) {
-        Emittable found = this.findById(id);
+        User found = this.findById(id);
 
         if (found != null) {
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
             em.remove(found);
             transaction.commit();
-            System.out.println("Emittable " + found.getId() + " deleted!");
+            System.out.println("User " + found.getName() + " deleted!");
         } else {
-            System.out.println("Emittable with id " + id + " not found");
+            System.out.println("User with id " + id + " not found");
         }
 
     }

@@ -16,7 +16,7 @@ public class Route {
     private String terminals;
     @Column(name="average_time")
     private int averageTime;
-    @ManyToMany(mappedBy = "route")
+    @ManyToMany(mappedBy = "routes")
     private List<Means> means = new ArrayList<>();
     @OneToMany(mappedBy = "route")
     private List<Mileage> milages = new ArrayList<>();

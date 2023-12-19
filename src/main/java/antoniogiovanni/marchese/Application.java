@@ -14,7 +14,7 @@ import java.time.LocalDate;
 
 public class Application {
 
-    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("u4-w3-l2");
+    private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("team4-bw4");
 
     public static void main(String[] args) {
 

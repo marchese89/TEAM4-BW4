@@ -4,59 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05078f02-c0b3-4eea-aa94-8dcf70472dae" name="Changes" comment="inizioMarissa">
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/MileageDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/PeriodStateMeansOfTransportDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/RouteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Mileage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Route.java" afterDir="false" />
+    <list default="true" id="a79f06ac-2465-4dd2-a4f4-d4b91018bbae" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Means.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Means.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/PeriodStateMeansOfTransport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/PeriodStateMeansOfTransport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Route.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Enum" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 5
 }</component>
-  <component name="ProjectId" id="2Zi5TCdfZNeHjh3CZKH2vXoUVIS" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="2ZlG4vwPCQYF2OpCH35ijRaibjx" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.Application.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;MARISSA&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
@@ -70,35 +44,12 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="05078f02-c0b3-4eea-aa94-8dcf70472dae" name="Changes" comment="" />
-      <created>1702890030850</created>
+      <changelist id="a79f06ac-2465-4dd2-a4f4-d4b91018bbae" name="Changes" comment="" />
+      <created>1702989065303</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1702890030850</updated>
+      <updated>1702989065303</updated>
     </task>
-    <task id="LOCAL-00001" summary="inizio">
-      <option name="closed" value="true" />
-      <created>1702892520039</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1702892520039</updated>
-    </task>
-    <task id="LOCAL-00002" summary="inizioMarissa">
-      <option name="closed" value="true" />
-      <created>1702919063558</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1702919063558</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="inizio" />
-    <MESSAGE value="inizioMarissa" />
-    <option name="LAST_COMMIT_MESSAGE" value="inizioMarissa" />
   </component>
 </project>
