@@ -9,9 +9,9 @@ public class Ticket extends Emittable{
     private Boolean valid;
     @Column(name = "endorsement_date")
     private LocalDate endorsementDate;
-//    @ManyToOne
-//    @JoinColumn(name = "means_id")
-//    private Means means;
+    @ManyToOne
+    @JoinColumn(name = "means_id")
+    private Means means;
 
     public Ticket() {
         this.valid = true;
@@ -33,13 +33,13 @@ public class Ticket extends Emittable{
         this.endorsementDate = endorsementDate;
     }
 
-//    public Means getMeans() {
-//        return means;
-//    }
-//
-//    public void setMeans(Means means) {
-//        this.means = means;
-//    }
+    public Means getMeans() {
+        return means;
+    }
+
+    public void setMeans(Means means) {
+        this.means = means;
+    }
 
     @Override
     public String toString() {

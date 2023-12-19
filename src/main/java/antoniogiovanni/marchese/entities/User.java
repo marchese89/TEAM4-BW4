@@ -12,10 +12,10 @@ public class User {
     private String name;
     private String surname;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Subscription> subscriptions;
 
-    @OneToMany
+    @OneToMany(mappedBy = "user")
     private List<Card> cards;
     public User() {
     }

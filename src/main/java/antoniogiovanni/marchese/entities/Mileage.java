@@ -24,10 +24,11 @@ public class Mileage {
     //CONSTRUCTORS
 
 
-    public Mileage ( LocalDateTime dateAndTime, int duration, Route route ) {
+    public Mileage ( LocalDateTime dateAndTime, int duration, Route route, Means means ) {
         this.dateAndTime = dateAndTime;
         this.duration = duration;
         this.route = route;
+        this.means = means;
     }
 
     public Mileage(){}

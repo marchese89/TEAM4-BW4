@@ -23,7 +23,12 @@ public class Route {
 
 
     //CONSTRUCTORS
-    public Route ( String departure, String terminals, int averageTime ) {
+
+
+    public Route() {
+    }
+
+    public Route (String departure, String terminals, int averageTime ) {
         this.departure = departure;
         this.terminals = terminals;
         this.averageTime = averageTime;
