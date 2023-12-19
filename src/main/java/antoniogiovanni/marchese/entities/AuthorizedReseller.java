@@ -9,10 +9,6 @@ import java.util.List;
 @Table(name="resellers")
 @DiscriminatorValue("reseller")
 public class AuthorizedReseller extends CardTicketIssuer {
-    @Id
-    @GeneratedValue
-    private long id;
-
 
     public AuthorizedReseller(){}
 
@@ -20,7 +16,7 @@ public class AuthorizedReseller extends CardTicketIssuer {
     @Override
     public String toString() {
         return "AuthorizedReseller{" +
-                "id=" + id +
+                "id=" + super.getId() +
                 "} " + super.toString();
     }
 

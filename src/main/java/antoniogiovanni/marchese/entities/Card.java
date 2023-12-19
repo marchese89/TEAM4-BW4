@@ -2,7 +2,8 @@ package antoniogiovanni.marchese.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-
+@Entity
+@Table(name = "cards")
 public class Card {
     @Id
     @GeneratedValue

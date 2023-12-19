@@ -5,6 +5,7 @@ import antoniogiovanni.marchese.enums.SubscriptionType;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "subscriptions")
 public class Subscription extends Emittable{
 
     @ManyToOne

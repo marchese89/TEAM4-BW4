@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Entity
+@Table(name = "card_ticket_issuers")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="issuer_type")
 public abstract class CardTicketIssuer {
@@ -24,6 +25,7 @@ public abstract class CardTicketIssuer {
         for (Card c: cardList){
             if(now.isBefore(c.getExpirationDate())){
                 ok = true;
+                break;
             }
         }
         if(ok) {

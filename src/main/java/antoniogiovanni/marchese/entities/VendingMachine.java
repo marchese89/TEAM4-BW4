@@ -3,7 +3,7 @@ import antoniogiovanni.marchese.enums.VendingMachineState;
 
 import javax.persistence.*;
 @Entity
-@Table
+@Table(name = "vending_machines")
 @DiscriminatorValue("vending_machine")
 public class VendingMachine extends CardTicketIssuer {
 
