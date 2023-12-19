@@ -1,0 +1,59 @@
+package antoniogiovanni.marchese.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import java.time.LocalDate;
+
+@Entity
+public class Ticket extends Emittable{
+    private Boolean valid;
+    @Column(name = "endorsement_date")
+    private LocalDate endorsementDate;
+    @ManyToOne
+    @JoinColumn(name = "means_id")
+    private Means means;
+
+    public Ticket() {
+    }
+
+    public Ticket(Boolean valid, LocalDate endorsementDate) {
+        this.valid = valid;
+        this.endorsementDate = endorsementDate;
+    }
+
+    public Boolean getValid() {
+        return valid;
+    }
+
+    public void setValid(Boolean valid) {
+        this.valid = valid;
+    }
+
+    public LocalDate getEndorsementDate() {
+        return endorsementDate;
+    }
+
+    public void setEndorsementDate(LocalDate endorsementDate) {
+        this.endorsementDate = endorsementDate;
+    }
+
+    public Means getMeans() {
+        return means;
+    }
+
+    public void setMeans(Means means) {
+        this.means = means;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{ issueDate=" + super.getIssueDate()+
+                "valid=" + valid +
+                ", endorsementDate=" + endorsementDate +
+                ", means=" + means +
+                ", IssueDate=" + IssueDate +
+                "} ";
+    }
+}

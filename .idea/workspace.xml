@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05078f02-c0b3-4eea-aa94-8dcf70472dae" name="Changes" comment="inizio">
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/EmittableDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Emittable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/enums/SubscriptionType.java" afterDir="false" />
+    <list default="true" id="05078f02-c0b3-4eea-aa94-8dcf70472dae" name="Changes" comment="fatti i DAO">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,12 +78,39 @@
       <option name="project" value="LOCAL" />
       <updated>1702892520039</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="creazione cartelle">
+      <option name="closed" value="true" />
+      <created>1702912680241</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1702912680241</updated>
+    </task>
+    <task id="LOCAL-00003" summary="creata qualche classe">
+      <option name="closed" value="true" />
+      <created>1702914346388</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1702914346388</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fatti i DAO">
+      <option name="closed" value="true" />
+      <created>1702916561406</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1702916561406</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="inizio" />
-    <option name="LAST_COMMIT_MESSAGE" value="inizio" />
+    <MESSAGE value="creazione cartelle" />
+    <MESSAGE value="creata qualche classe" />
+    <MESSAGE value="fatti i DAO" />
+    <option name="LAST_COMMIT_MESSAGE" value="fatti i DAO" />
   </component>
 </project>
