@@ -1,7 +1,6 @@
 package antoniogiovanni.marchese.entities;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -48,7 +47,7 @@ public class Ticket extends Emittable{
                 "valid=" + valid +
                 ", endorsementDate=" + endorsementDate +
                 ", means=" + means +
-                ", IssueDate=" + IssueDate +
+                ", IssueDate=" + super.issueDate +
                 "} ";
     }
 }

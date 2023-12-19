@@ -20,7 +20,7 @@ public abstract class CardTicketIssuer {
     @OneToMany(mappedBy = "cardTicketIssuer")
     List<Emittable> emittableList;
 
-    public Subscription issueSupscription(User user, SubscriptionType subscriptionType) {
+    public Subscription issueSupscription(User user, SubscriptionType subscriptionType, LocalDate issueDate) {
         //verifichiamo che l'utente selezionato abbia  una tessera in corso di validità
         List<Card> cardList = user.getCards();
         LocalDate now = LocalDate.now();
@@ -32,7 +32,7 @@ public abstract class CardTicketIssuer {
             }
         }
         if(ok) {
-            Subscription subscription = new Subscription(user, subscriptionType);
+            Subscription subscription = new Subscription(user, subscriptionType, issueDate);
             subscription.setCardTicketIssuer(this);
             return subscription;
         }else{
