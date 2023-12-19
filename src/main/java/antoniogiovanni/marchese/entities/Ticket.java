@@ -16,11 +16,7 @@ public class Ticket extends Emittable{
     private Means means;
 
     public Ticket() {
-    }
-
-    public Ticket(Boolean valid, LocalDate endorsementDate) {
-        this.valid = valid;
-        this.endorsementDate = endorsementDate;
+        this.valid = true;
     }
 
     public Boolean getValid() {

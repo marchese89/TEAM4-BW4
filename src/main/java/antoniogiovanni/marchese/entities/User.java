@@ -27,6 +27,14 @@ public class User {
         this.surname = surname;
     }
 
+    public List<Card> getCards() {
+        return cards;
+    }
+
+    public void setCards(List<Card> cards) {
+        this.cards = cards;
+    }
+
     public long getId() {
         return id;
     }

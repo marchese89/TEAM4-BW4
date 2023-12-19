@@ -5,9 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="05078f02-c0b3-4eea-aa94-8dcf70472dae" name="Changes" comment="fatti i DAO">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/CardTicketIssuer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/enums/VendingMachineState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Distributore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/VendingMachine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Emittable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Emittable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Rivenditore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/AuthorizedReseller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Stato.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
