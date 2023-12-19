@@ -1,42 +1,42 @@
 package antoniogiovanni.marchese.dao;
 
 import antoniogiovanni.marchese.entities.Means;
+import antoniogiovanni.marchese.entities.Mileage;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import java.util.UUID;
 
-public class MeansDAO {
+public class MileageDAO {
     private final EntityManager em;
 
-    public MeansDAO ( EntityManager em ) {
+    public MileageDAO ( EntityManager em ) {
         this.em = em;
     }
 
     //************************* SAVE ******************************
-    public void saveMeans( Means vehicle){
+    public void saveMileage( Mileage mileage){
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
-        em.persist(vehicle);
+        em.persist(mileage);
         transaction.commit();
-        System.out.println( vehicle.getMeansType()+ " with id " + vehicle.getId() + " successfully added to Public Transport");
+        System.out.println( "Mileage with id: " + mileage.getId() + " successfully added to Public Transport");
     }
     //*********************** FIND BY ID **************************
-    public Means findById( long id) {
-        return em.find(Means.class, id);
+    public Mileage findById( long id) {
+        return em.find(Mileage.class, id);
     }
 
     //*************************** DELETE **************************
     public void findByIdAndDelete(long id){
-        Means found = this.findById(id);
+        Mileage found = this.findById(id);
         if(found != null){
             EntityTransaction transaction = em.getTransaction();
             transaction.begin();
             em.remove(found);
             transaction.commit();
-            System.out.println( found.getMeansType()+ " with id " + found.getId() + " successfully deleted from Public Transport");
+            System.out.println( "Mileage with id: " + found.getId() + " successfully deleted from Public Transport");
         }else {
-            System.out.println( "Means not found");
+            System.out.println( "Mileage not found");
         }
     }
 }

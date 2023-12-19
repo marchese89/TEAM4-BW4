@@ -4,6 +4,8 @@ import antoniogiovanni.marchese.enums.MeansState;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class PeriodStateMeansOfTransport {
@@ -15,12 +17,13 @@ public class PeriodStateMeansOfTransport {
     private LocalDate startDate;
     @Column(name = "end_date")
     private LocalDate endDate;
-
     @Enumerated(EnumType.STRING)
     @Column(name = "means_state")
     private MeansState state;
+    @ManyToMany(mappedBy = "periods")
+    private List<Means> means= new ArrayList<>();
 
-    //    COSTRUTTORI
+    //COSTRUTTORI
     public PeriodStateMeansOfTransport(LocalDate startDate, LocalDate endDate, MeansState state) {
         this.startDate = startDate;
         this.endDate = endDate;
