@@ -57,8 +57,8 @@ public class Means {
         this.meansType = meansType;
     }
 
-    public void setRoute ( Route route ) {
-        this.route = route;
+    public void addRoute ( Route route ) {
+        this.routes.add(route);
     }
 
     //GETTER
@@ -72,8 +72,15 @@ public class Means {
         return meansType;
     }
 
-    public Route getRoute () {
-        return route;
+    public Route getRouteById (long id) {
+
+        for(Route r:routes){
+            if(r.getId() == id){
+                return r;
+            }
+        }
+
+        return null;
     }
     //TO_STRING
 
