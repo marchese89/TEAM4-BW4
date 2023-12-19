@@ -11,10 +11,17 @@ public abstract class Emittable {
     @GeneratedValue
     private long id;
     @Column(name = "issue_date")
-    LocalDate IssueDate;
+    LocalDate issueDate;
 
     public long getId() {
         return id;
+    }
+
+    public Emittable(){
+
+    }
+    public Emittable(LocalDate issueDate) {
+        issueDate = issueDate;
     }
 
     @ManyToOne
@@ -30,17 +37,17 @@ public abstract class Emittable {
     }
 
     public LocalDate getIssueDate() {
-        return IssueDate;
+        return issueDate;
     }
 
     public void setIssueDate(LocalDate issueDate) {
-        IssueDate = issueDate;
+        issueDate = issueDate;
     }
 
     @Override
     public String toString() {
         return
                 "id=" + id +
-                ", IssueDate=" + IssueDate;
+                ", IssueDate=" + issueDate;
     }
 }

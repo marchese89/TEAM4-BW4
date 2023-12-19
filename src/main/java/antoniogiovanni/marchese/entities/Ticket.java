@@ -2,13 +2,14 @@ package antoniogiovanni.marchese.entities;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tickets")
 public class Ticket extends Emittable{
     private Boolean valid;
     @Column(name = "endorsement_date")
-    private LocalDate endorsementDate;
+    private LocalDateTime endorsementDate;
     @ManyToOne
     @JoinColumn(name = "means_id")
     private Means means;
@@ -25,11 +26,11 @@ public class Ticket extends Emittable{
         this.valid = valid;
     }
 
-    public LocalDate getEndorsementDate() {
+    public LocalDateTime getEndorsementDate() {
         return endorsementDate;
     }
 
-    public void setEndorsementDate(LocalDate endorsementDate) {
+    public void setEndorsementDate(LocalDateTime endorsementDate) {
         this.endorsementDate = endorsementDate;
     }
 
