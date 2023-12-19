@@ -12,7 +12,7 @@ public class PeriodStateMeansOfTransport {
     @Id
     @GeneratedValue
     @Column(name = "id")
-    private int id;
+    private long id;
     @Column(name = "start_date")
     private LocalDate startDate;
     @Column(name = "end_date")
@@ -34,7 +34,7 @@ public class PeriodStateMeansOfTransport {
     }
 
     //GETTER
-    public int getId() {
+    public long getId() {
         return id;
     }
 

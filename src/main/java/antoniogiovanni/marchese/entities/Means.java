@@ -24,6 +24,10 @@ public class Means {
             inverseJoinColumns = @JoinColumn(name="period_id")
     )
     private List<PeriodStateMeansOfTransport> periods= new ArrayList<>();
+
+    public void addPeriodStateMeansOfTransport(PeriodStateMeansOfTransport period){
+        periods.add(period);
+    }
     @ManyToMany
     @JoinTable(
             name="means_route",
@@ -31,7 +35,8 @@ public class Means {
             inverseJoinColumns = @JoinColumn(name="route_id"))
     private List<Route> routes= new ArrayList<>();
 
-
+    @OneToMany(mappedBy = "means")
+    private List<Ticket> ticketList;
 
     //CONSTRUCTOR
     public Means (  MeansType meansType ) {
@@ -74,6 +79,6 @@ public class Means {
 
     @Override
     public String toString () {
-        return "Mean has " + "id: " + id + "; the capacity is: " + capacity + "; the Means type is: " + meansType;
+        return "Means has id: " + id + "; the capacity is: " + capacity + "; the Means type is: " + meansType;
     }
 }

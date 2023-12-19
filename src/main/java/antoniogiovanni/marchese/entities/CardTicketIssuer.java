@@ -17,6 +17,9 @@ public abstract class CardTicketIssuer {
     @GeneratedValue
     private long id;
 
+    @OneToMany(mappedBy = "cardTicketIssuer")
+    List<Emittable> emittableList;
+
     public Subscription issueSupscription(User user, SubscriptionType subscriptionType) {
         //verifichiamo che l'utente selezionato abbia  una tessera in corso di validità
         List<Card> cardList = user.getCards();
@@ -46,6 +49,5 @@ public abstract class CardTicketIssuer {
     public long getId() {
         return id;
     }
-    @OneToMany
-    private List<Emittable> emittableList;
+
 }

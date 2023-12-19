@@ -14,7 +14,7 @@ public class PeriodStateMeansOfTransportDAO {
     }
 
     //************************* SAVE ******************************
-    public void saveMileage( PeriodStateMeansOfTransport period){
+    public void savePeriod( PeriodStateMeansOfTransport period){
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
         em.persist(period);
