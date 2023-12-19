@@ -46,7 +46,7 @@ public class Ticket extends Emittable{
         return "Ticket{ issueDate=" + super.getIssueDate()+
                 "valid=" + valid +
                 ", endorsementDate=" + endorsementDate +
-//                ", means=" + means +
+                ", means=" + means +
                 ", IssueDate=" + IssueDate +
                 "} ";
     }

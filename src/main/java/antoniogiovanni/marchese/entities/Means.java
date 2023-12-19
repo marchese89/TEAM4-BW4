@@ -87,6 +87,6 @@ public class Means {
 
     @Override
     public String toString () {
-        return "Mean has " + "id: " + id + "; the capacity is: " + capacity + "; the Means type is: " + meansType;
+        return "Means has id: " + id + "; the capacity is: " + capacity + "; the Means type is: " + meansType;
     }
 }

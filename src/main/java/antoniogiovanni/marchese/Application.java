@@ -29,33 +29,33 @@ public class Application {
 
         Means vehicle1 = new Means( MeansType.BUS);
 
-        //md.saveMeans(vehicle1);
+        md.saveMeans(vehicle1);
         PeriodStateMeansOfTransport period1 = new PeriodStateMeansOfTransport(LocalDate.of(2023,12,5),LocalDate.of(2023,12,25), MeansState.MAINTENANCE);
-        //pd.savePeriod(period1);
+        pd.savePeriod(period1);
         //colleghiamo il mezzo al periodo-stato
         Means meansFromDB = md.findById(1);
         PeriodStateMeansOfTransport periodFromDB = pd.findById(2);
         meansFromDB.addPeriodStateMeansOfTransport(periodFromDB);
-        //md.saveMeans(meansFromDB);
+        md.saveMeans(meansFromDB);
 //        System.out.println(vehicle1);
 //        System.out.println(period1);
-        //User u1 = new User("Nome","Cognome");
-        //ud.save(u1);
+        User u1 = new User("Nome","Cognome");
+        ud.save(u1);
         User userFromDB = ud.findById(4);
         Card card = new Card(123,LocalDate.now().minusWeeks(2),userFromDB);
-        //ccd.save(card);
+        ccd.save(card);
         Subscription subscription = new Subscription(userFromDB, SubscriptionType.MONTHLY);
-        //eemd.save(subscription);
+        eemd.save(subscription);
         Ticket ticket = new Ticket();
         ticket.setMeans(meansFromDB);
-        //eemd.save(ticket);
+        eemd.save(ticket);
         Route route = new Route("Partenza","Arrivo",60);
-        //routeDAO.saveRoute(route);
+        routeDAO.saveRoute(route);
         Route routeFromDB = routeDAO.findById(10);
         meansFromDB.addRoute(routeFromDB);
         md.saveMeans(meansFromDB);
         Mileage mileage = new Mileage(LocalDateTime.now().plusDays(2),70,routeFromDB,meansFromDB);
-        //mileageDAO.saveMileage(mileage);
+        mileageDAO.saveMileage(mileage);
 
     }
 }
