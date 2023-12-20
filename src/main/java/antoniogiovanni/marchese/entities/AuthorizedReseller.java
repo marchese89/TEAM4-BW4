@@ -10,9 +10,10 @@ import java.util.List;
 @DiscriminatorValue("reseller")
 public class AuthorizedReseller extends CardTicketIssuer {
 
+    //CONSTRUCTOR
     public AuthorizedReseller(){}
 
-
+    //TO_STRING
     @Override
     public String toString() {
         return "AuthorizedReseller{" +
@@ -20,10 +21,5 @@ public class AuthorizedReseller extends CardTicketIssuer {
                 "} " + super.toString();
     }
 
-
-    @Override
-    public Ticket issueTicket() {
-        return new Ticket();
-    }
 }
 

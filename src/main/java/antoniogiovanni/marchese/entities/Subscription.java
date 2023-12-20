@@ -19,6 +19,7 @@ public class Subscription extends Emittable{
     @Column(name = "expiration_date")
     private LocalDate expirationDate;
 
+    //CONSTRUCTORS
     public Subscription() {
     }
 
@@ -34,6 +35,8 @@ public class Subscription extends Emittable{
         }
     }
 
+
+    //GETTERS & SETTERS
     public User getUser() {
         return user;
     }
@@ -50,12 +53,13 @@ public class Subscription extends Emittable{
         this.subscriptionType = subscriptionType;
     }
 
+
+    //TO_STRING
     @Override
     public String toString() {
-        return "Subscription{" +
-                "subscriptionType=" + subscriptionType +
-                ", expirationDate=" + expirationDate +
-                ", issueDate=" + issueDate +
-                "} " + super.toString();
+        return "Subscription type: " + subscriptionType +
+                ": expiration date: " + expirationDate +
+                ", issue date: " + issueDate +
+                "| " + super.toString();
     }
 }

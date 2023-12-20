@@ -1,21 +1,27 @@
 package antoniogiovanni.marchese.entities;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tickets")
 public class Ticket extends Emittable{
     private Boolean valid;
-    @Column(name = "endorsement_date")
+    @Column(name = "endorsement_date", nullable = true)
     private LocalDateTime endorsementDate;
     @ManyToOne
     @JoinColumn(name = "means_id")
     private Means means;
 
-    public Ticket() {
+    //CONSTRUCTORS
+    public Ticket ( LocalDate issueDate ) {
+        super(issueDate);
         this.valid = true;
     }
+
+
+    //GETTERS & SETTERS
 
     public Boolean getValid() {
         return valid;
@@ -41,13 +47,16 @@ public class Ticket extends Emittable{
         this.means = means;
     }
 
+    //TO_STRING
     @Override
     public String toString() {
-        return "Ticket{ issueDate=" + super.getIssueDate()+
-                "valid=" + valid +
-                ", endorsementDate=" + endorsementDate +
-                ", means=" + means +
-                ", IssueDate=" + super.issueDate +
-                "} ";
+        return "Ticket with issue date: " + super.getIssueDate()+
+                "valid: " + valid +
+                ", endorsement date: " + endorsementDate +
+                ", means: " + means ;
+    }
+    //METHODS
+    public Ticket() {
+        this.valid = true;
     }
 }

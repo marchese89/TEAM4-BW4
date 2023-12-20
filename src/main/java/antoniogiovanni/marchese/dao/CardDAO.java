@@ -13,6 +13,7 @@ public class CardDAO {
         this.em = em;
     }
 
+    //************************* SAVE ******************************
     public void save(Card card) {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
@@ -21,11 +22,13 @@ public class CardDAO {
         System.out.println("Card " + card.getCardNumber() + " added!");
     }
 
+    //*********************** FIND BY ID **************************
     public Card findById(long id) {
         return em.find(Card.class,id);
     }
 
 
+    //*************************** DELETE **************************
     public void findByIdAndDelete(long id) {
         Card found = this.findById(id);
 

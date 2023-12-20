@@ -13,6 +13,7 @@ public class EmittableDAO {
         this.em = em;
     }
 
+    //************************* SAVE ******************************
     public void save(Emittable emittable) {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
@@ -20,12 +21,12 @@ public class EmittableDAO {
         transaction.commit();
         System.out.println("Emittable " + emittable.getId() + " added!");
     }
-
+    //*********************** FIND BY ID **************************
     public Emittable findById(long id) {
         return em.find(Emittable.class,id);
     }
 
-
+    //*************************** DELETE **************************
     public void findByIdAndDelete(long id) {
         Emittable found = this.findById(id);
 

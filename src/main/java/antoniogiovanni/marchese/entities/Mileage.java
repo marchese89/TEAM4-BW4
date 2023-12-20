@@ -22,8 +22,6 @@ public class Mileage {
     private Means means;
 
     //CONSTRUCTORS
-
-
     public Mileage ( LocalDateTime dateAndTime, int duration, Route route, Means means ) {
         this.dateAndTime = dateAndTime;
         this.duration = duration;

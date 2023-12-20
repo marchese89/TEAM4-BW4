@@ -23,8 +23,6 @@ public class Route {
 
 
     //CONSTRUCTORS
-
-
     public Route() {
     }
 
@@ -34,7 +32,7 @@ public class Route {
         this.averageTime = averageTime;
     }
 
-    //GETTER
+    //GETTERS
     public long getId () {
         return id;
     }
@@ -47,7 +45,7 @@ public class Route {
         return terminals;
     }
 
-    //SETTER
+    //SETTERS
     public void setDeparture ( String departure ) {
         this.departure = departure;
     }
@@ -56,8 +54,8 @@ public class Route {
         this.terminals = terminals;
     }
 
-    //TO_STRING
 
+    //TO_STRING
     @Override
     public String toString () {
         return "Route id is: "   + id + "; departure from: " + departure + "; terminals to: " + terminals;

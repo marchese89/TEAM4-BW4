@@ -61,7 +61,7 @@ public class Means {
         this.routes.add(route);
     }
 
-    //GETTER
+    //GETTERS
     public long getId () {
         return id;
     }
@@ -73,17 +73,15 @@ public class Means {
     }
 
     public Route getRouteById (long id) {
-
         for(Route r:routes){
             if(r.getId() == id){
                 return r;
             }
         }
-
         return null;
     }
-    //TO_STRING
 
+    //TO_STRING
     @Override
     public String toString () {
         return "Means has id: " + id + "; the capacity is: " + capacity + "; the Means type is: " + meansType;

@@ -13,6 +13,7 @@ public class UserDAO {
         this.em = em;
     }
 
+    //************************* SAVE ******************************
     public void save(User user) {
         EntityTransaction transaction = em.getTransaction();
         transaction.begin();
@@ -20,12 +21,12 @@ public class UserDAO {
         transaction.commit();
         System.out.println("User " + user.getName() + " added!");
     }
-
+    //*********************** FIND BY ID **************************
     public User findById(long id) {
         return em.find(User.class,id);
     }
 
-
+    //*************************** DELETE **************************
     public void findByIdAndDelete(long id) {
         User found = this.findById(id);
 
