@@ -53,11 +53,15 @@ public class Application {
         //eemd.save(ticket);
         Route route = new Route("Partenza","Arrivo",60);
         //routeDAO.saveRoute(route);
-        Route routeFromDB = routeDAO.findById(10);
+        Route routeFromDB = routeDAO.findById(7);
         meansFromDB.addRoute(routeFromDB);
+        routeFromDB.addMeans(meansFromDB);
+        //routeDAO.saveRoute(routeFromDB);
         //md.saveMeans(meansFromDB);
         Mileage mileage = new Mileage(LocalDateTime.now().plusDays(2),70,routeFromDB,meansFromDB);
         //mileageDAO.saveMileage(mileage);
+        Long meansRouteCount = mileageDAO.meansRouteCount(meansFromDB,routeFromDB);
+        System.out.println("viaggi fatti dal mezzo "+ meansFromDB.getId() + " sulla rotta "+routeFromDB.getId()+": "+meansRouteCount);
 
         VendingMachine machine1 = new VendingMachine(VendingMachineState.ACTIVE);
         //issuerDAO.save(machine1);
