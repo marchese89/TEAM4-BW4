@@ -4,6 +4,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
+//numero di volte che un mezzo percorre una tratta
+@NamedQuery(name = "meansRouteCount",query = "SELECT COUNT(m) FROM Mileage m WHERE m.means = :means AND m.route = :route")
 public class Mileage {
     @Id
     @GeneratedValue

@@ -31,7 +31,7 @@ public class Application {
 
         //md.saveMeans(vehicle1);
         PeriodStateMeansOfTransport period1 = new PeriodStateMeansOfTransport(LocalDate.of(2023,12,5),LocalDate.of(2023,12,25), MeansState.MAINTENANCE);
-        pd.savePeriod(period1);
+        //pd.savePeriod(period1);
         //colleghiamo il mezzo al periodo-stato
         Means meansFromDB = md.findById(1);
         PeriodStateMeansOfTransport periodFromDB = pd.findById(2);
@@ -45,17 +45,21 @@ public class Application {
         Card card = new Card(123,LocalDate.now().minusWeeks(2),userFromDB);
         //ccd.save(card);
         Subscription subscription = new Subscription(userFromDB, SubscriptionType.MONTHLY,LocalDate.now());
-        eemd.save(subscription);
+        //eemd.save(subscription);
         Ticket ticket = new Ticket();
         ticket.setMeans(meansFromDB);
         //eemd.save(ticket);
         Route route = new Route("Partenza","Arrivo",60);
-        routeDAO.saveRoute(route);
-        Route routeFromDB = routeDAO.findById(10);
+        //routeDAO.saveRoute(route);
+        Route routeFromDB = routeDAO.findById(7);
         meansFromDB.addRoute(routeFromDB);
+        routeFromDB.addMeans(meansFromDB);
+        //routeDAO.saveRoute(routeFromDB);
         //md.saveMeans(meansFromDB);
         Mileage mileage = new Mileage(LocalDateTime.now().plusDays(2),70,routeFromDB,meansFromDB);
         //mileageDAO.saveMileage(mileage);
+        Long meansRouteCount = mileageDAO.meansRouteCount(meansFromDB,routeFromDB);
+        System.out.println("viaggi fatti dal mezzo "+ meansFromDB.getId() + " sulla rotta "+routeFromDB.getId()+": "+meansRouteCount);
 
     }
 }
