@@ -1,12 +1,14 @@
 package antoniogiovanni.marchese.dao;
 
 import antoniogiovanni.marchese.entities.Emittable;
+import antoniogiovanni.marchese.entities.Means;
 import antoniogiovanni.marchese.entities.Subscription;
 import antoniogiovanni.marchese.entities.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public class EmittableDAO {
@@ -45,6 +47,18 @@ public class EmittableDAO {
 
     }
 
+    public long endorsedTicketPerMeansTotal(Means means){
+        TypedQuery<Long> countTicketTotalQuery = em.createNamedQuery("endorsedTicketTotal",Long.class);
+        countTicketTotalQuery.setParameter("means",means);
+        return countTicketTotalQuery.getSingleResult();
+    }
+
+    public long endorsedTicketPerMeansPeriod(Means means, LocalDateTime startDate, LocalDateTime endDate){
+        TypedQuery<Long> countTicketTotalQuery = em.createNamedQuery("endorsedTicketPeriod",Long.class);
+        countTicketTotalQuery.setParameter("means",means);
+        countTicketTotalQuery.setParameter("startDate",startDate);
+        countTicketTotalQuery.setParameter("endDate",endDate);
+        return countTicketTotalQuery.getSingleResult();
     public boolean SubscriptionPerCardNumber(long cardNumber){
         TypedQuery<Subscription> subscriptionPerCardNumberQuery = em.createNamedQuery("getSubscriptionByCard", Subscription.class);
         subscriptionPerCardNumberQuery.setParameter("cardNumber",cardNumber);
