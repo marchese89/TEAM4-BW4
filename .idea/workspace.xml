@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a79f06ac-2465-4dd2-a4f4-d4b91018bbae" name="Changes" comment="inizioSimone">
-      <change afterPath="$PROJECT_DIR$/src/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/EmittableDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/EmittableDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/CardTicketIssuer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/CardTicketIssuer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

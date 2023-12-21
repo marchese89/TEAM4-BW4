@@ -45,10 +45,4 @@ public class UserDAO {
 
     }
 
-    //** SUBSCRIPTIONS QUERY **
-    public List<Subscription> getSubscriptionByCard(long cardNumber) {
-        TypedQuery<Subscription> getSubscription = em.createNamedQuery("getSubscriptionByCard",  Subscription.class,);
-        getSubscription.setParameter("specificCardNumber", cardNumber);
-        return getSubscription.getResultList();
-    }
 }

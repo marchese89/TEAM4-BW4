@@ -68,6 +68,8 @@ public class Application {
 //        eemd.save(subscription1);
         Card card1 = new Card(1890, LocalDate.now().minusMonths(5), user2fromdb);
 //        ccd.save(card1);
-        ud.getSubscriptionByCard(1890);
+//        ud.getSubscriptionByCard(1890);
+        System.out.println("ci sono abbonamenti validi per n. carta?");
+        System.out.println(eemd.SubscriptionPerCardNumber(123));
     }
 }

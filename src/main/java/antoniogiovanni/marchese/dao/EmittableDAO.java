@@ -1,10 +1,13 @@
 package antoniogiovanni.marchese.dao;
 
 import antoniogiovanni.marchese.entities.Emittable;
+import antoniogiovanni.marchese.entities.Subscription;
 import antoniogiovanni.marchese.entities.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class EmittableDAO {
     private final EntityManager em;
@@ -39,5 +42,16 @@ public class EmittableDAO {
             System.out.println("Emittable with id " + id + " not found");
         }
 
+    }
+
+    public boolean SubscriptionPerCardNumber(long cardNumber){
+        TypedQuery<Subscription> subscriptionPerCardNumberQuery = em.createNamedQuery("getSubscriptionByCard", Subscription.class);
+        subscriptionPerCardNumberQuery.setParameter("cardNumber",cardNumber);
+        List<Subscription> s = subscriptionPerCardNumberQuery.getResultList();
+        if (s.size() > 0){
+            return true;
+        }else {
+            return false;
+        }
     }
 }

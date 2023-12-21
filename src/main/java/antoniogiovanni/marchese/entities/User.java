@@ -2,11 +2,10 @@ package antoniogiovanni.marchese.entities;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "users")
-//@NamedQuery(name="getSubscriptionByCard", query="SELECT s FROM User u JOIN u.cards c JOIN u.subscriptions s WHERE  c.cardNumber = :specificCardNumber AND s.issueDate > CURRENT_DATE")
-@NamedQuery(name="getSubscriptionByCard", query="SELECT s FROM User u WHERE :cardNumber IN (SELECT c FROM Card u WHERE c.)")
 public class User {
     @Id
     @GeneratedValue
@@ -72,4 +71,13 @@ public class User {
                 ", subscriptions=" + subscriptions +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id && name.equals(user.name) && surname.equals(user.surname);
+    }
+
 }
