@@ -10,7 +10,7 @@ import java.util.Objects;
 @Entity
 public class Means {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private long id;
     @Column(name="capacity")

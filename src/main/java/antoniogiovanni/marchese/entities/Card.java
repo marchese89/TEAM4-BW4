@@ -6,7 +6,7 @@ import java.time.LocalDate;
 @Table(name = "cards")
 public class Card {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "card_number", unique = true)

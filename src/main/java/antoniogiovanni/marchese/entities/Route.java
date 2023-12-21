@@ -8,7 +8,7 @@ import java.util.Objects;
 @Entity
 public class Route {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private long id;
     @Column(name="departure")

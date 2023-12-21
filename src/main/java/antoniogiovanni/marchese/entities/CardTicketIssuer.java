@@ -18,7 +18,7 @@ import java.util.Objects;
 @NamedQuery(name="findSubscriptionByIssuer", query ="SELECT s FROM Subscription s WHERE s.cardTicketIssuer = :issuer AND s.issueDate BETWEEN :initialDate AND :finalDate")
 public abstract class CardTicketIssuer {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @OneToMany(mappedBy = "cardTicketIssuer")
