@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "subscriptions")
-public class Subscription extends Emittable{
+public class Subscription extends Emittable {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
@@ -26,10 +26,9 @@ public class Subscription extends Emittable{
         super(issueDate);
         this.user = user;
         this.subscriptionType = subscriptionType;
-        if (subscriptionType == SubscriptionType.WEEKLY){
+        if (subscriptionType == SubscriptionType.WEEKLY) {
             this.expirationDate = issueDate.plusWeeks(1);
-        }
-        if (subscriptionType == SubscriptionType.MONTHLY) {
+        } else {
             this.expirationDate = issueDate.plusMonths(1);
         }
     }

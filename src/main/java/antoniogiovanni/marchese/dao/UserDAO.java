@@ -1,9 +1,13 @@
 package antoniogiovanni.marchese.dao;
 
+import antoniogiovanni.marchese.entities.Card;
+import antoniogiovanni.marchese.entities.Subscription;
 import antoniogiovanni.marchese.entities.User;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
+import java.util.List;
 
 public class UserDAO {
 
@@ -22,7 +26,7 @@ public class UserDAO {
     }
 
     public User findById(long id) {
-        return em.find(User.class,id);
+        return em.find(User.class, id);
     }
 
 
@@ -39,5 +43,12 @@ public class UserDAO {
             System.out.println("User with id " + id + " not found");
         }
 
+    }
+
+    //** SUBSCRIPTIONS QUERY **
+    public List<Subscription> getSubscriptionByCard(long cardNumber) {
+        TypedQuery<Subscription> getSubscription = em.createNamedQuery("getSubscriptionByCard",  Subscription.class,);
+        getSubscription.setParameter("specificCardNumber", cardNumber);
+        return getSubscription.getResultList();
     }
 }

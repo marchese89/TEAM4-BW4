@@ -5,6 +5,8 @@ import java.util.List;
 
 @Entity
 @Table(name = "users")
+//@NamedQuery(name="getSubscriptionByCard", query="SELECT s FROM User u JOIN u.cards c JOIN u.subscriptions s WHERE  c.cardNumber = :specificCardNumber AND s.issueDate > CURRENT_DATE")
+@NamedQuery(name="getSubscriptionByCard", query="SELECT s FROM User u WHERE :cardNumber IN (SELECT c FROM Card u WHERE c.)")
 public class User {
     @Id
     @GeneratedValue

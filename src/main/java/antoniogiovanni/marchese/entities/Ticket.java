@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tickets")
-public class Ticket extends Emittable{
+public class Ticket extends Emittable {
     private Boolean valid;
     @Column(name = "endorsement_date")
     private LocalDateTime endorsementDate;
@@ -44,11 +44,11 @@ public class Ticket extends Emittable{
 
     @Override
     public String toString() {
-        return "Ticket{ issueDate=" + super.getIssueDate()+
+        return "Ticket{ issueDate=" + super.getIssueDate() +
                 "valid=" + valid +
                 ", endorsementDate=" + endorsementDate +
                 ", means=" + means +
-                ", IssueDate=" + IssueDate +
+                ", IssueDate=" + super.getIssueDate() +
                 "} ";
     }
 }
