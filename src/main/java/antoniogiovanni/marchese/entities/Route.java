@@ -3,6 +3,7 @@ package antoniogiovanni.marchese.entities;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Route {
@@ -23,8 +24,6 @@ public class Route {
 
 
     //CONSTRUCTORS
-
-
     public Route() {
     }
 
@@ -33,7 +32,10 @@ public class Route {
         this.terminals = terminals;
         this.averageTime = averageTime;
     }
-
+    //METHODS
+    public void addMeans(Means means){
+        this.means.add(means);
+    }
     //GETTER
     public long getId () {
         return id;
@@ -47,7 +49,7 @@ public class Route {
         return terminals;
     }
 
-    //SETTER
+    //SETTERS
     public void setDeparture ( String departure ) {
         this.departure = departure;
     }
@@ -56,10 +58,19 @@ public class Route {
         this.terminals = terminals;
     }
 
-    //TO_STRING
 
+    //TO_STRING
     @Override
     public String toString () {
         return "Route id is: "   + id + "; departure from: " + departure + "; terminals to: " + terminals;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Route route = (Route) o;
+        return id == route.id && averageTime == route.averageTime && departure.equals(route.departure) && terminals.equals(route.terminals);
+    }
+
 }

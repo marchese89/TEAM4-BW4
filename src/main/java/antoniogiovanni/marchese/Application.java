@@ -71,5 +71,20 @@ public class Application {
 //        ud.getSubscriptionByCard(1890);
         System.out.println("ci sono abbonamenti validi per n. carta?");
         System.out.println(eemd.SubscriptionPerCardNumber(123));
+        //md.saveMeans(meansFromDB);
+//        System.out.println(vehicle1);
+//        System.out.println(period1);
+      
+        Long meansRouteCount = mileageDAO.meansRouteCount(meansFromDB,routeFromDB);
+        System.out.println("viaggi fatti dal mezzo "+ meansFromDB.getId() + " sulla rotta "+routeFromDB.getId()+": "+meansRouteCount);
+
+        VendingMachine machine1 = new VendingMachine(VendingMachineState.ACTIVE);
+        //issuerDAO.save(machine1);
+        VendingMachine machineFromDB = (VendingMachine) issuerDAO.findById(16);
+        Ticket ticket1 = machineFromDB.issueTicket(LocalDate.now());
+        eemd.save(ticket1);
+        System.out.println("All emittable items issued in a specific period");
+        issuerDAO.getEmittableByIssuer(machineFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
+
     }
 }

@@ -4,8 +4,8 @@ import antoniogiovanni.marchese.enums.MeansType;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 public class Means {
@@ -62,7 +62,7 @@ public class Means {
         this.routes.add(route);
     }
 
-    //GETTER
+    //GETTERS
     public long getId () {
         return id;
     }
@@ -74,19 +74,25 @@ public class Means {
     }
 
     public Route getRouteById (long id) {
-
         for(Route r:routes){
             if(r.getId() == id){
                 return r;
             }
         }
-
         return null;
     }
-    //TO_STRING
 
+    //TO_STRING
     @Override
     public String toString () {
         return "Means has id: " + id + "; the capacity is: " + capacity + "; the Means type is: " + meansType;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Means means = (Means) o;
+        return id == means.id && capacity == means.capacity && meansType == means.meansType;
     }
 }

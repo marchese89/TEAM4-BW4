@@ -8,15 +8,20 @@ import java.time.LocalDateTime;
 @Table(name = "tickets")
 public class Ticket extends Emittable {
     private Boolean valid;
-    @Column(name = "endorsement_date")
+    @Column(name = "endorsement_date", nullable = true)
     private LocalDateTime endorsementDate;
     @ManyToOne
     @JoinColumn(name = "means_id")
     private Means means;
 
-    public Ticket() {
+    //CONSTRUCTORS
+    public Ticket ( LocalDate issueDate ) {
+        super(issueDate);
         this.valid = true;
     }
+
+
+    //GETTERS & SETTERS
 
     public Boolean getValid() {
         return valid;
@@ -42,6 +47,7 @@ public class Ticket extends Emittable {
         this.means = means;
     }
 
+    //TO_STRING
     @Override
     public String toString() {
         return "Ticket{ issueDate=" + super.getIssueDate() +

@@ -23,7 +23,7 @@ public class PeriodStateMeansOfTransport {
     @ManyToMany(mappedBy = "periods")
     private List<Means> means= new ArrayList<>();
 
-    //COSTRUTTORI
+    //CONSTRUCTORS
     public PeriodStateMeansOfTransport(LocalDate startDate, LocalDate endDate, MeansState state) {
         this.startDate = startDate;
         this.endDate = endDate;
@@ -33,7 +33,7 @@ public class PeriodStateMeansOfTransport {
     public PeriodStateMeansOfTransport() {
     }
 
-    //GETTER
+    //GETTERS
     public long getId() {
         return id;
     }
@@ -49,8 +49,9 @@ public class PeriodStateMeansOfTransport {
     public MeansState getState() {
         return state;
     }
-//    SETTER
 
+
+    //SETTERS
     public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
@@ -63,11 +64,10 @@ public class PeriodStateMeansOfTransport {
         this.state = state;
     }
 
-    //TOSTRING
+    //TO_STRING
     @Override
     public String toString() {
-        return "PeriodStateMeansOfTransport " +
-                "id: " + id +
+        return "Period id: " + id +
                 "; startDate: " + startDate +
                 "; endDate: " + endDate +
                 "; state: " + state;

@@ -18,6 +18,8 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Card> cards;
+
+    //CONSTRUCTORS
     public User() {
     }
 
@@ -26,6 +28,7 @@ public class User {
         this.surname = surname;
     }
 
+    //GETTERS & SETTERS
     public List<Card> getCards() {
         return cards;
     }
@@ -62,14 +65,12 @@ public class User {
         this.subscriptions = subscriptions;
     }
 
+
+    //TO_STRING
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", subscriptions=" + subscriptions +
-                '}';
+        return "User "  + name + ' ' + surname +
+                " has following subscriptions: "+ subscriptions ;
     }
 
     @Override

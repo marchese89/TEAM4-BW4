@@ -22,6 +22,7 @@ public class Card {
     @JoinColumn(name = "user_id")
     private User user;
 
+    //CONSTRUCTORS
     public Card() {
     }
 
@@ -32,6 +33,7 @@ public class Card {
         this.user = user;
     }
 
+    //GETTERS & SETTERS
     public long getId() {
         return id;
     }
@@ -47,7 +49,6 @@ public class Card {
     public LocalDate getIssueDate() {
         return issueDate;
     }
-
     public void setIssueDate(LocalDate issueDate) {
         this.issueDate = issueDate;
     }
@@ -68,14 +69,13 @@ public class Card {
         this.user = user;
     }
 
+
+    //TO_STRING
     @Override
     public String toString() {
-        return "Card{" +
-                "id=" + id +
-                ", cardNumber=" + cardNumber +
-                ", issueDate=" + issueDate +
-                ", expirationDate=" + expirationDate +
-                ", user=" + user.getName() +
-                '}';
+        return "Card number: " + cardNumber +
+                "; issueDate: " + issueDate +
+                "; expirationDate: " + expirationDate +
+                "; belonging to " + user.getName() + " " + user.getSurname();
     }
 }
