@@ -58,13 +58,11 @@ public class Ticket extends Emittable{
     //TO_STRING
     @Override
     public String toString() {
-        return "Ticket with issue date: " + super.getIssueDate()+
-                "valid: " + valid +
-                ", endorsement date: " + endorsementDate +
-                ", means: " + means ;
-    }
-    //METHODS
-    public Ticket() {
-        this.valid = true;
+        return "Ticket{ issueDate=" + super.getIssueDate() +
+                "valid=" + valid +
+                ", endorsementDate=" + endorsementDate +
+                ", means=" + means +
+                ", IssueDate=" + super.getIssueDate() +
+                "} ";
     }
 }
