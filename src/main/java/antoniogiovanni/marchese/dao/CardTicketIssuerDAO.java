@@ -2,6 +2,7 @@ package antoniogiovanni.marchese.dao;
 
 import antoniogiovanni.marchese.entities.CardTicketIssuer;
 import antoniogiovanni.marchese.entities.Emittable;
+import antoniogiovanni.marchese.entities.Subscription;
 import antoniogiovanni.marchese.entities.Ticket;
 
 import javax.persistence.EntityManager;
@@ -48,7 +49,23 @@ public class CardTicketIssuerDAO {
     }
     //*********************** EMITTABLE QUERY *********************
     public List<Emittable> getEmittableByIssuer( CardTicketIssuer issuer, LocalDate initialDate,LocalDate finalDate ){
-        TypedQuery<Emittable> getTickets = em.createNamedQuery("findEmittableByIssuer", Emittable.class);
+        TypedQuery<Emittable> getEmittables = em.createNamedQuery("findEmittableByIssuer", Emittable.class);
+        getEmittables.setParameter("issuer", issuer);
+        getEmittables.setParameter("initialDate", initialDate);
+        getEmittables.setParameter("finalDate", finalDate);
+        return getEmittables.getResultList();
+    }
+    //************************* TICKET QUERY **********************
+    public List<Ticket> getTicketByIssuer( CardTicketIssuer issuer, LocalDate initialDate,LocalDate finalDate ){
+        TypedQuery<Ticket> getTickets = em.createNamedQuery("findTicketByIssuer", Ticket.class);
+        getTickets.setParameter("issuer", issuer);
+        getTickets.setParameter("initialDate", initialDate);
+        getTickets.setParameter("finalDate", finalDate);
+        return getTickets.getResultList();
+    }
+    //********************** SUBSCRIPTION QUERY ********************
+    public List<Subscription> getSubscriptionByIssuer( CardTicketIssuer issuer, LocalDate initialDate, LocalDate finalDate ){
+        TypedQuery<Subscription> getTickets = em.createNamedQuery("findSubscriptionByIssuer", Subscription.class);
         getTickets.setParameter("issuer", issuer);
         getTickets.setParameter("initialDate", initialDate);
         getTickets.setParameter("finalDate", finalDate);

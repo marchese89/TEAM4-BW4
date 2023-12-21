@@ -12,7 +12,10 @@ import java.util.Objects;
 @Entity
 @Table(name = "card_ticket_issuers")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "issuer_type")
+@DiscriminatorColumn(name="issuer_type")
+@NamedQuery(name="findEmittableByIssuer", query ="SELECT e FROM Emittable e WHERE e.cardTicketIssuer = :issuer AND e.issueDate BETWEEN :initialDate AND :finalDate")
+@NamedQuery(name="findTicketByIssuer", query ="SELECT t FROM Ticket t WHERE t.cardTicketIssuer = :issuer AND t.issueDate BETWEEN :initialDate AND :finalDate")
+@NamedQuery(name="findSubscriptionByIssuer", query ="SELECT s FROM Subscription s WHERE s.cardTicketIssuer = :issuer AND s.issueDate BETWEEN :initialDate AND :finalDate")
 public abstract class CardTicketIssuer {
     @Id
     @GeneratedValue
@@ -21,23 +24,31 @@ public abstract class CardTicketIssuer {
     @OneToMany(mappedBy = "cardTicketIssuer")
     protected List<Emittable> emittedItems = new ArrayList<>();
 
-    public Subscription issueSupscription(User user, SubscriptionType subscriptionType, LocalDate issuedate) {
+
+    //GETTER
+    public long getId() {
+        return id;
+    }
+
+
+    //METHODS
+    public Subscription issueSubscription(User user, SubscriptionType subscriptionType, LocalDate issueDate) {
         //verifichiamo che l'utente selezionato abbia  una tessera in corso di validità
         List<Card> cardList = user.getCards();
         LocalDate now = LocalDate.now();
         boolean ok = false;//indica se l'utente può fare un abbonamento
-        for (Card c : cardList) {
-            if (now.isBefore(c.getExpirationDate())) {
+        for (Card c: cardList){
+            if(now.isBefore(c.getExpirationDate())){
                 ok = true;
                 break;
             }
         }
-        if (ok) {
-            Subscription subscription = new Subscription(user, subscriptionType, issuedate);
+        if(ok) {
+            Subscription subscription = new Subscription(user, subscriptionType, issueDate);
             subscription.setCardTicketIssuer(this);
             emittedItems.add(subscription);
             return subscription;
-        } else {
+        }else{
             return null;
         }
     }
