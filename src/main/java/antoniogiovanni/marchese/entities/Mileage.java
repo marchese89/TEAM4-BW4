@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @NamedQuery(name = "meansRouteCount",query = "SELECT COUNT(m) FROM Mileage m WHERE m.means = :means AND m.route = :route")
 public class Mileage {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private long id;
 
