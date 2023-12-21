@@ -74,8 +74,8 @@ public class Card {
     @Override
     public String toString() {
         return "Card number: " + cardNumber +
-                "; issueDate: " + issueDate +
-                "; expirationDate: " + expirationDate +
-                "; belonging to " + user.getName() + " " + user.getSurname();
+                "| issue date: " + issueDate +
+                "| expirationD date: " + expirationDate +
+                "| belonging to " + user.getName() + " " + user.getSurname();
     }
 }

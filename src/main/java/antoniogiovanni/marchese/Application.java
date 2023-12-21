@@ -12,13 +12,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class Application {
 
     private static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("team4-bw4");
 
     public static void main(String[] args) {
-
+        //ENTITY MANAGER DAO
         EntityManager em = emf.createEntityManager();
         MeansDAO md = new MeansDAO(em);
         PeriodStateMeansOfTransportDAO pd = new PeriodStateMeansOfTransportDAO(em);
@@ -29,6 +30,32 @@ public class Application {
         MileageDAO mileageDAO = new MileageDAO(em);
         CardTicketIssuerDAO issuerDAO = new CardTicketIssuerDAO(em);
 
+        //EXECUTION APP
+        //Creiamo user e gli diamo una tessera
+        Scanner userInput= new Scanner(System.in);
+
+        System.out.println("Ciao e benvenuto/a, per poter usufruire del servizio di abbonamento è necessario registrarsi.");
+        System.out.println("Inserisci per favore il tuo nome: ");
+
+        //recuperiamo tramite scanner i dati forniti
+
+        /*
+        String name = userInput.nextLine();
+        System.out.println("Ora il tuo cognome: ");
+        String surname = userInput.nextLine();
+         */
+             */
+
+        //Registro user nel database
+            //User newUser = new User(name, surname);
+            //ud.save(newUser);
+        User newUserFromDB = ud.findById(1);
+        Card newCard = new Card(181013,LocalDate.now(),newUserFromDB);
+            //ccd.save(newCard);
+        Card firstUserCard = ccd.findById(3);
+        System.out.println("Ecco a te: ");
+        System.out.println(newCard);
+        //********************** USER TTICKETS AND SUBSCRIPTION CREATION *******************
         Means vehicle1 = new Means(MeansType.BUS);
 
 //        md.saveMeans(vehicle1);
@@ -89,8 +116,8 @@ public class Application {
         //ticketFromDB.endorseTicket(meansFromDB,LocalDateTime.now());
         //eemd.save(ticketFromDB);
         System.out.println("***************************** Tiket vidimati su uno specifico mezzo in totale **************************");
-        System.out.println(eemd.endorsedTicketPerMeansTotal(meansFromDB));
+        //System.out.println(eemd.endorsedTicketPerMeansTotal(meansFromDB));
         System.out.println("****************************************** Tiket vidimati su uno specifico mezzo e in un range di date *********************** ");
-        System.out.println(eemd.endorsedTicketPerMeansPeriod(meansFromDB,LocalDateTime.now().minusDays(1),LocalDateTime.now().plusDays(1)));
+        //System.out.println(eemd.endorsedTicketPerMeansPeriod(meansFromDB,LocalDateTime.now().minusDays(1),LocalDateTime.now().plusDays(1)));
     }
 }
