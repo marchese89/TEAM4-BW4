@@ -48,8 +48,8 @@ public class Application {
 //        ccd.save(card);
         Subscription subscription = new Subscription(userFromDB, SubscriptionType.MONTHLY, LocalDate.now());
 //        eemd.save(subscription);
-        Ticket ticket = new Ticket();
-        ticket.setMeans(meansFromDB);
+        //Ticket ticket = new Ticket();
+        //ticket.setMeans(meansFromDB);
 //        eemd.save(ticket);
         Route route = new Route("Partenza", "Arrivo", 60);
 //        routeDAO.saveRoute(route);

@@ -53,12 +53,13 @@ public class EmittableDAO {
         return countTicketTotalQuery.getSingleResult();
     }
 
-    public long endorsedTicketPerMeansPeriod(Means means, LocalDateTime startDate, LocalDateTime endDate){
-        TypedQuery<Long> countTicketTotalQuery = em.createNamedQuery("endorsedTicketPeriod",Long.class);
-        countTicketTotalQuery.setParameter("means",means);
-        countTicketTotalQuery.setParameter("startDate",startDate);
-        countTicketTotalQuery.setParameter("endDate",endDate);
+    public long endorsedTicketPerMeansPeriod(Means means, LocalDateTime startDate, LocalDateTime endDate) {
+        TypedQuery<Long> countTicketTotalQuery = em.createNamedQuery("endorsedTicketPeriod", Long.class);
+        countTicketTotalQuery.setParameter("means", means);
+        countTicketTotalQuery.setParameter("startDate", startDate);
+        countTicketTotalQuery.setParameter("endDate", endDate);
         return countTicketTotalQuery.getSingleResult();
+    }
     public boolean SubscriptionPerCardNumber(long cardNumber){
         TypedQuery<Subscription> subscriptionPerCardNumberQuery = em.createNamedQuery("getSubscriptionByCard", Subscription.class);
         subscriptionPerCardNumberQuery.setParameter("cardNumber",cardNumber);
