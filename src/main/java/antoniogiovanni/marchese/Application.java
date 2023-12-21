@@ -66,10 +66,16 @@ public class Application {
         VendingMachine machine1 = new VendingMachine(VendingMachineState.ACTIVE);
         //issuerDAO.save(machine1);
         VendingMachine machineFromDB = (VendingMachine) issuerDAO.findById(16);
-        Ticket ticket1 = machineFromDB.issueTicket(LocalDate.now());
-        eemd.save(ticket1);
+        //Ticket ticket1 = machineFromDB.issueTicket(LocalDate.now());
+        //eemd.save(ticket1);
         System.out.println("All emittable items issued in a specific period");
-        issuerDAO.getEmittableByIssuer(machineFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
-
+        //issuerDAO.getEmittableByIssuer(machineFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
+        Ticket ticketFromDB = (Ticket) eemd.findById(6);
+        //ticketFromDB.endorseTicket(meansFromDB,LocalDateTime.now());
+        //eemd.save(ticketFromDB);
+        System.out.println("***************************** Tiket vidimati su uno specifico mezzo in totale **************************");
+        System.out.println(eemd.endorsedTicketPerMeansTotal(meansFromDB));
+        System.out.println("****************************************** Tiket vidimati su uno specifico mezzo e in un range di date *********************** ");
+        System.out.println(eemd.endorsedTicketPerMeansPeriod(meansFromDB,LocalDateTime.now().minusDays(1),LocalDateTime.now().plusDays(1)));
     }
 }

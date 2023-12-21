@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tickets")
+@NamedQuery(name = "endorsedTicketTotal",query = "SELECT COUNT(t) FROM Ticket t WHERE t.means = :means")
+@NamedQuery(name = "endorsedTicketPeriod", query = "SELECT COUNT(t) FROM Ticket t WHERE t.means = :means AND t.endorsementDate BETWEEN :startDate AND :endDate")
 public class Ticket extends Emittable{
     private Boolean valid;
     @Column(name = "endorsement_date", nullable = true)
@@ -43,8 +45,14 @@ public class Ticket extends Emittable{
         return means;
     }
 
-    public void setMeans(Means means) {
+    private void setMeans(Means means) {
         this.means = means;
+    }
+
+    public void endorseTicket(Means means,LocalDateTime endorsementDate){
+        setMeans(means);
+        this.valid = false;
+        this.endorsementDate = endorsementDate;
     }
 
     //TO_STRING
