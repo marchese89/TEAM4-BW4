@@ -162,12 +162,18 @@ public class Application {
         */
         //5) CHECKING QUERIES CORRECT EXECUTION
         //************************** QUERY TEST ZONE ***********************
-
-        System.out.println("QUERY FOR RESEARCH OF EMITTABLES");
+        /**/
+        System.out.println("*************************************** QUERIES ***********************************************");
+        System.out.println("**************************************** INSERT DATA **************************************");
         User newUserFromDB = ud.findById(1);
         VendingMachine vendingFromDB = (VendingMachine) issuerDAO.findById(1);
         Subscription subscription = vendingFromDB.issueSubscription(newUserFromDB,SubscriptionType.WEEKLY,LocalDate.now());
-        //eemd.save(subscription);
+        eemd.save(subscription);
+
+
+
+        System.out.println("QUERY FOR RESEARCH OF EMITTABLES");
+
         // Ticket and/ or subsriptions issued in a specific period and from specific issuer.
         System.out.println("*************** Subscriptions released **********************");
         issuerDAO.getSubscriptionByIssuer(vendingFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
@@ -176,7 +182,39 @@ public class Application {
         System.out.println("*********** Tickets & Subscriptions released ****************");
         issuerDAO.getEmittableByIssuer(vendingFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
         System.out.println("*************************************************************");
+        System.out.println("********************************** ENDORSED TICKETS *************************************");
 
+        System.out.println("***************************** ENDORSED TICKETS BETWEEN YESTERDAY AND TWOMORROW ********************");
+        System.out.println(eemd.endorsedTicketPerMeansPeriod(md.findById(1),LocalDateTime.now().minusDays(1),LocalDateTime.now().plusDays(1)));
+        System.out.println("***************************** ENDORSED TICKETS TOTAL ********************");
 
+        Means means = md.findById(1);
+        Ticket ticket2fromDB = (Ticket) eemd.findById(2);
+        Ticket ticket4 = vendingFromDB.issueTicket(LocalDate.now());
+        Ticket ticket5 = vendingFromDB.issueTicket(LocalDate.now());
+        Ticket ticket6 = vendingFromDB.issueTicket(LocalDate.now());
+        Ticket ticket7 = vendingFromDB.issueTicket(LocalDate.now());
+        Ticket ticket8 = vendingFromDB.issueTicket(LocalDate.now());
+//        eemd.save(ticket4);
+//        eemd.save(ticket5);
+//        eemd.save(ticket6);
+//        eemd.save(ticket7);
+//        eemd.save(ticket8);
+        Ticket ticket4fromDB = (Ticket) eemd.findById(4);
+        Ticket ticket5fromDB = (Ticket) eemd.findById(5);
+        Ticket ticket6fromDB = (Ticket) eemd.findById(6);
+        Ticket ticket7fromDB = (Ticket) eemd.findById(7);
+        Ticket ticket8fromDB = (Ticket) eemd.findById(8);
+        ticket2fromDB.endorseTicket(md.findById(1),LocalDateTime.now());
+        ticket4fromDB.endorseTicket(md.findById(1),LocalDateTime.now());
+        ticket5fromDB.endorseTicket(md.findById(1),LocalDateTime.now().minusDays(4));
+        ticket6fromDB.endorseTicket(md.findById(1),LocalDateTime.now().plusDays(4));
+//        eemd.save(ticket2fromDB);
+//        eemd.save(ticket4fromDB);
+//        eemd.save(ticket5fromDB);
+//        eemd.save(ticket6fromDB);
+
+        System.out.println(eemd.endorsedTicketPerMeansTotal(md.findById(1)));
+         /**/
     }
 }
