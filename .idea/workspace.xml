@@ -4,34 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11d087f8-ceff-4e5c-8f07-01e059f0fd2c" name="Changes" comment="merged master with Antonio's updates">
+    <list default="true" id="11d087f8-ceff-4e5c-8f07-01e059f0fd2c" name="Changes" comment="little more than half done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/EmittableDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/EmittableDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Means.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Means.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2ZtFhIFDZGubcopZ0ELFv3MCqcD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "MARISSA"
   }
 }]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task id="LOCAL-00001" summary="little more than half done">
+      <option name="closed" value="true" />
+      <created>1703206396115</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1703206396115</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="11d087f8-ceff-4e5c-8f07-01e059f0fd2c" name="Changes" comment="little more than half done" />
+      <created>1703233589290</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1703233589290</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Starting to write down the execution of the app" />
     <MESSAGE value="merged master with Antonio's updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="merged master with Antonio's updates" />
+    <MESSAGE value="little more than half done" />
+    <option name="LAST_COMMIT_MESSAGE" value="little more than half done" />
   </component>
 </project>
