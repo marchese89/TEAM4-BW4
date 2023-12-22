@@ -216,5 +216,9 @@ public class Application {
 
         System.out.println(eemd.endorsedTicketPerMeansTotal(md.findById(1)));
          /**/
+        System.out.println("*************************** MILEAGE PER MEANS PER ROUTE ************************************");
+        System.out.println(mileageDAO.meansRouteCount(md.findById(1),routeDAO.findById(1)));
+        System.out.println("*************************************** ACTIVE SUBSCRIPTION PER CARD NUMBER *********************");
+        eemd.getSubscriptionByCardNumber(151515);
     }
 }
