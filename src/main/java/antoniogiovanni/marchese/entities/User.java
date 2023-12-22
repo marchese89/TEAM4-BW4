@@ -15,7 +15,7 @@ public class User {
     private String surname;
 
     @OneToMany(mappedBy = "user")
-    private List<Subscription> subscriptions = new ArrayList<>();;
+    private List<Subscription> subscriptions = new ArrayList<>();
 
     @OneToMany(mappedBy = "user")
     private List<Card> cards = new ArrayList<>();

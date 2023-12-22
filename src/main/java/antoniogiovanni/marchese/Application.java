@@ -39,7 +39,7 @@ public class Application {
         //CREATION OF THE SPECIFIC USER AND OF HIS CARD
         Scanner userInput= new Scanner(System.in);
 
-        System.out.println("HELLO! Welcome to L.A.S.M, the best service of public transport in the city! ");
+        System.out.println("HELLO! Welcome to M.A.L.S , the best service of public transport in the city! ");
         System.out.println("If you wanna buy a subscription, follow the following instructions. ");
 
         //1) INTERROGATE USER FOR DATA
@@ -53,36 +53,33 @@ public class Application {
 
         User newUser = new User(name, surname);
         ud.save(newUser);
-        System.out.println("Proceeding on creation of your card");
-
         User newUserFromDB = ud.findById(1);
+        System.out.println("Proceeding with your CARD CREATION");
         Card newCard = new Card(151515,LocalDate.now(),newUserFromDB);
-
         ccd.save(newCard);
         Card cardFromDB = ccd.findById(1);
         newUserFromDB.getCards().add(cardFromDB);
-        ud.save(newUserFromDB);
 
         Card firstUserCard = ccd.findById(1);
-        System.out.println("Here's your new card! ");
+        System.out.println("Here's your new CARD! ");
         System.out.println(newCard);
 
 
         // ************** END PART 1 ********************
         // ************** START PART 2 *****************
         //3) CREATING SUBSCRIPTION
-
+        System.out.println("We are now GENERATING YOUR SUBSCRIPTION...");
         Subscription subForNewUser = new Subscription(newUserFromDB,SubscriptionType.WEEKLY,LocalDate.now());
         eemd.save(subForNewUser);
         Subscription subForNewUserFromDB = (Subscription) eemd.findById(1);
-        System.out.println("Here is your subscription, thanks for choosing us!");
+        System.out.println("Here is your SUBSCRIPTION, thanks for choosing us!");
         System.out.println(subForNewUserFromDB);
 
 
         //4) CREATION OF VARIOUS THINGS
-        System.out.println("**********************************************");
 
         //********************** MEANS CREATION **************************
+        System.out.println("........Adding more data to DATABASE........");
         Means newPublicMeans1 = new Means(MeansType.BUS);
         Means newPublicMeans2 = new Means(MeansType.TRAM);
         Means newPublicMeans3 = new Means(MeansType.TRAM);
@@ -129,7 +126,7 @@ public class Application {
 
         // 5)CARD VALIDITY, NEW TICKET ISSUER AND ENDORSEMENT
         //******************** USER TAKES A BUS/TRAM | check query ************************
-        System.out.println("**************************************************************");
+        System.out.println("**********************************************");
         System.out.println("Here you have the available routes, choose one by typing a number from 1 to 4");
         System.out.println(newRouteFromDB1);
         System.out.println(newRouteFromDB2);
@@ -139,7 +136,7 @@ public class Application {
         routeDAO.findById(choosedRoute);
         System.out.println("Oh, looks like there's a ticket inspector. He needs your card");
         System.out.println("in order to check the validity of your subscription");
-        System.out.println("Digit now the number of your card");
+        System.out.println("Digit now the number of your card: ");
         int userShowsSubscription = Integer.parseInt(userInput.nextLine());
         eemd.getSubscriptionByCardNumber(userShowsSubscription);
 
@@ -158,36 +155,40 @@ public class Application {
         System.out.println(ticketFromDB);
 
         System.out.println("Welcome on the bus. The ticket inspector is asking for your ticket.");
+        System.out.println("Thank you, here's your endorsed ticket!");
         ticketFromDB.endorseTicket(bus1FromDB,LocalDateTime.now());
         System.out.println(ticketFromDB);
 
-        //System.out.println("**********************************************");
+        userInput.close();
+        System.out.println("**********************************************");
+
 
         // ********************** END PART 3 *******************************
         /**/
         //5) CHECKING QUERIES CORRECT EXECUTION
         //************************** QUERY TEST ZONE ***********************
         /**/
-        System.out.println("*************************************** QUERIES ***********************************************");
-        System.out.println("**************************************** INSERT DATA **************************************");
+        System.out.println("****************** QUERIES *****************");
+        System.out.println("........Adding more data to DATABASE........");
         User newUserFromDB2 = ud.findById(1);
-       VendingMachine vendingFromDB2 = (VendingMachine) issuerDAO.findById(1);
+        VendingMachine vendingFromDB2 = (VendingMachine) issuerDAO.findById(1);
         Subscription subscription = vendingFromDB2.issueSubscription(newUserFromDB2,SubscriptionType.WEEKLY,LocalDate.now());
         eemd.save(subscription);
 
 
 
-        System.out.println("QUERY FOR RESEARCH OF EMITTABLES");
+        System.out.println("");
+        System.out.println("***** QUERY FOR RESEARCH OF EMITTABLES *****");
 
         // Ticket and/ or subsriptions issued in a specific period and from specific issuer.
-        System.out.println("*************** Subscriptions released **********************");
+        System.out.println("*********** Subscriptions released *********");
         issuerDAO.getSubscriptionByIssuer(vendingFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
-        System.out.println("********************* Tickets released **********************");
+        System.out.println("*************** Tickets released ***********");
         issuerDAO.getTicketByIssuer(vendingFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
-        System.out.println("*********** Tickets & Subscriptions released ****************");
+        System.out.println("***** Tickets & Subscriptions released *****");
         issuerDAO.getEmittableByIssuer(vendingFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
 
-        System.out.println("********************************** INSERT TICKETS DATA *************************************");
+        System.out.println("........Adding more data to DATABASE........");
 
         Means means = md.findById(1);
         Ticket ticket2fromDB = (Ticket) eemd.findById(2);
@@ -215,15 +216,15 @@ public class Application {
         eemd.save(ticket5fromDB);
         eemd.save(ticket6fromDB);
 
-        System.out.println("***************************** ENDORSED TICKETS BETWEEN YESTERDAY AND TWOMORROW ********************");
+        System.out.println("***** ENDORSED TICKETS BETWEEN YESTERDAY AND TOMORROW ****");
         System.out.println(eemd.endorsedTicketPerMeansPeriod(md.findById(1),LocalDateTime.now().minusDays(1),LocalDateTime.now().plusDays(1)));
-        System.out.println("***************************** ENDORSED TICKETS TOTAL ********************");
+        System.out.println("************** ENDORSED TICKETS TOTAL ********************");
 
 
 
         System.out.println(eemd.endorsedTicketPerMeansTotal(md.findById(1)));
          /**/
-        System.out.println("*************************** MILEAGE PER MEANS PER ROUTE ************************************");
+        System.out.println("************ MILEAGE PER MEANS PER ROUTE *****************");
         System.out.println(mileageDAO.meansRouteCount(md.findById(1),routeDAO.findById(1)));
 
     }
