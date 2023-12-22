@@ -59,8 +59,8 @@ public class Subscription extends Emittable {
     @Override
     public String toString() {
         return "Subscription type: " + subscriptionType +
-                ": expiration date: " + expirationDate +
-                ", issue date: " + issueDate +
-                "| " + super.toString();
+                "| expiration date: " + expirationDate +
+                "| issue date: " + issueDate +
+                "|" ;
     }
 }

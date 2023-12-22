@@ -62,7 +62,7 @@ public class Route {
     //TO_STRING
     @Override
     public String toString () {
-        return "Route id is: "   + id + "; departure from: " + departure + "; terminals to: " + terminals;
+        return "Departure from: " + departure + "| terminal to: " + terminals;
     }
 
     @Override

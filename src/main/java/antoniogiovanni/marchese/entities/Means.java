@@ -85,7 +85,7 @@ public class Means {
     //TO_STRING
     @Override
     public String toString () {
-        return "Means has id: " + id + "; the capacity is: " + capacity + "; the Means type is: " + meansType;
+        return  meansType + " with a  capacity of " + capacity + " people. Vehicle id: " + id ;
     }
 
     @Override

@@ -60,14 +60,14 @@ public class EmittableDAO {
         countTicketTotalQuery.setParameter("endDate", endDate);
         return countTicketTotalQuery.getSingleResult();
     }
-    public boolean SubscriptionPerCardNumber(long cardNumber){
-        TypedQuery<Subscription> subscriptionPerCardNumberQuery = em.createNamedQuery("getSubscriptionByCard", Subscription.class);
-        subscriptionPerCardNumberQuery.setParameter("cardNumber",cardNumber);
-        List<Subscription> s = subscriptionPerCardNumberQuery.getResultList();
+    public void getSubscriptionByCardNumber(long cardNumber){
+        TypedQuery<Subscription> getSubscriptionByCardNumber = em.createNamedQuery("getSubscriptionByCard", Subscription.class);
+        getSubscriptionByCardNumber.setParameter("cardNumber",cardNumber);
+        List<Subscription> s = getSubscriptionByCardNumber.getResultList();
         if (s.size() > 0){
-            return true;
+            System.out.println("Your subscription is valid. Enjoy your trip!");;
         }else {
-            return false;
+            System.out.println("Your subscription is no longer valid. We are sorry, you will receive a fine");
         }
     }
 }

@@ -22,8 +22,8 @@ public class Ticket extends Emittable{
         this.valid = true;
     }
 
-
-    //GETTERS & SETTERS
+    public Ticket () {}
+//GETTERS & SETTERS
 
     public Boolean getValid() {
         return valid;
@@ -58,11 +58,9 @@ public class Ticket extends Emittable{
     //TO_STRING
     @Override
     public String toString() {
-        return "Ticket{ issueDate=" + super.getIssueDate() +
-                "valid=" + valid +
-                ", endorsementDate=" + endorsementDate +
-                ", means=" + means +
-                ", IssueDate=" + super.getIssueDate() +
-                "} ";
+        return "Ticket issued on " + super.getIssueDate() +
+                "| validity: " + valid +
+                "| endorsement date: " + endorsementDate +
+                "| means: " + means ;
     }
 }

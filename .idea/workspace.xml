@@ -4,97 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a79f06ac-2465-4dd2-a4f4-d4b91018bbae" name="Changes" comment="missing just testing">
+    <list default="true" id="11d087f8-ceff-4e5c-8f07-01e059f0fd2c" name="Changes" comment="merged master with Antonio's updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/EmittableDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/dao/EmittableDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Means.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Means.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Route.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Subscription.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/antoniogiovanni/marchese/entities/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 5
-}</component>
-  <component name="ProjectId" id="2ZlG4vwPCQYF2OpCH35ijRaibjx" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Application.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "MARISSA",
-    "kotlin-language-version-configured": "true"
+    "git-widget-placeholder": "MARISSA"
   }
-}</component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-17.0.9-corretto-17.0.9-249ae16d76d6-98297cd8" />
-      </set>
-    </attachedChunks>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+}]]></component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="a79f06ac-2465-4dd2-a4f4-d4b91018bbae" name="Changes" comment="" />
-      <created>1702989065303</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1702989065303</updated>
-    </task>
-    <task id="LOCAL-00001" summary="piccole correzioni">
-      <option name="closed" value="true" />
-      <created>1702991437998</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1702991437998</updated>
-    </task>
-    <task id="LOCAL-00002" summary="test DAO">
-      <option name="closed" value="true" />
-      <created>1703000113431</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1703000113431</updated>
-    </task>
-    <task id="LOCAL-00003" summary="test DAO, correzioni">
-      <option name="closed" value="true" />
-      <created>1703000664583</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1703000664583</updated>
-    </task>
-    <task id="LOCAL-00004" summary="missing just testing">
-      <option name="closed" value="true" />
-      <created>1703167613879</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1703167613879</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="piccole correzioni" />
-    <MESSAGE value="test DAO" />
-    <MESSAGE value="test DAO, correzioni" />
-    <MESSAGE value="inizioSimone" />
-    <MESSAGE value="missing just testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="missing just testing" />
+    <MESSAGE value="Starting to write down the execution of the app" />
+    <MESSAGE value="merged master with Antonio's updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="merged master with Antonio's updates" />
   </component>
 </project>
