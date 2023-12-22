@@ -35,7 +35,7 @@ public class Application {
 
 
         //EXECUTION APP ************ PART 1 **************
-        /*
+        /**/
         //CREATION OF THE SPECIFIC USER AND OF HIS CARD
         Scanner userInput= new Scanner(System.in);
 
@@ -57,7 +57,12 @@ public class Application {
 
         User newUserFromDB = ud.findById(1);
         Card newCard = new Card(151515,LocalDate.now(),newUserFromDB);
+
         ccd.save(newCard);
+        Card cardFromDB = ccd.findById(1);
+        newUserFromDB.getCards().add(cardFromDB);
+        ud.save(newUserFromDB);
+
         Card firstUserCard = ccd.findById(1);
         System.out.println("Here's your new card! ");
         System.out.println(newCard);
@@ -159,15 +164,15 @@ public class Application {
         //System.out.println("**********************************************");
 
         // ********************** END PART 3 *******************************
-        */
+        /**/
         //5) CHECKING QUERIES CORRECT EXECUTION
         //************************** QUERY TEST ZONE ***********************
         /**/
         System.out.println("*************************************** QUERIES ***********************************************");
         System.out.println("**************************************** INSERT DATA **************************************");
-        User newUserFromDB = ud.findById(1);
-        VendingMachine vendingFromDB = (VendingMachine) issuerDAO.findById(1);
-        Subscription subscription = vendingFromDB.issueSubscription(newUserFromDB,SubscriptionType.WEEKLY,LocalDate.now());
+        User newUserFromDB2 = ud.findById(1);
+       VendingMachine vendingFromDB2 = (VendingMachine) issuerDAO.findById(1);
+        Subscription subscription = vendingFromDB2.issueSubscription(newUserFromDB2,SubscriptionType.WEEKLY,LocalDate.now());
         eemd.save(subscription);
 
 
@@ -181,12 +186,8 @@ public class Application {
         issuerDAO.getTicketByIssuer(vendingFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
         System.out.println("*********** Tickets & Subscriptions released ****************");
         issuerDAO.getEmittableByIssuer(vendingFromDB,LocalDate.now().minusDays(1),LocalDate.now().plusDays(1)).forEach(System.out::println);
-        System.out.println("*************************************************************");
-        System.out.println("********************************** ENDORSED TICKETS *************************************");
 
-        System.out.println("***************************** ENDORSED TICKETS BETWEEN YESTERDAY AND TWOMORROW ********************");
-        System.out.println(eemd.endorsedTicketPerMeansPeriod(md.findById(1),LocalDateTime.now().minusDays(1),LocalDateTime.now().plusDays(1)));
-        System.out.println("***************************** ENDORSED TICKETS TOTAL ********************");
+        System.out.println("********************************** INSERT TICKETS DATA *************************************");
 
         Means means = md.findById(1);
         Ticket ticket2fromDB = (Ticket) eemd.findById(2);
@@ -195,11 +196,11 @@ public class Application {
         Ticket ticket6 = vendingFromDB.issueTicket(LocalDate.now());
         Ticket ticket7 = vendingFromDB.issueTicket(LocalDate.now());
         Ticket ticket8 = vendingFromDB.issueTicket(LocalDate.now());
-//        eemd.save(ticket4);
-//        eemd.save(ticket5);
-//        eemd.save(ticket6);
-//        eemd.save(ticket7);
-//        eemd.save(ticket8);
+        eemd.save(ticket4);
+        eemd.save(ticket5);
+        eemd.save(ticket6);
+        eemd.save(ticket7);
+        eemd.save(ticket8);
         Ticket ticket4fromDB = (Ticket) eemd.findById(4);
         Ticket ticket5fromDB = (Ticket) eemd.findById(5);
         Ticket ticket6fromDB = (Ticket) eemd.findById(6);
@@ -209,10 +210,16 @@ public class Application {
         ticket4fromDB.endorseTicket(md.findById(1),LocalDateTime.now());
         ticket5fromDB.endorseTicket(md.findById(1),LocalDateTime.now().minusDays(4));
         ticket6fromDB.endorseTicket(md.findById(1),LocalDateTime.now().plusDays(4));
-//        eemd.save(ticket2fromDB);
-//        eemd.save(ticket4fromDB);
-//        eemd.save(ticket5fromDB);
-//        eemd.save(ticket6fromDB);
+        eemd.save(ticket2fromDB);
+        eemd.save(ticket4fromDB);
+        eemd.save(ticket5fromDB);
+        eemd.save(ticket6fromDB);
+
+        System.out.println("***************************** ENDORSED TICKETS BETWEEN YESTERDAY AND TWOMORROW ********************");
+        System.out.println(eemd.endorsedTicketPerMeansPeriod(md.findById(1),LocalDateTime.now().minusDays(1),LocalDateTime.now().plusDays(1)));
+        System.out.println("***************************** ENDORSED TICKETS TOTAL ********************");
+
+
 
         System.out.println(eemd.endorsedTicketPerMeansTotal(md.findById(1)));
          /**/

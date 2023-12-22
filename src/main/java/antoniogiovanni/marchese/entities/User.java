@@ -1,6 +1,7 @@
 package antoniogiovanni.marchese.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -14,10 +15,10 @@ public class User {
     private String surname;
 
     @OneToMany(mappedBy = "user")
-    private List<Subscription> subscriptions;
+    private List<Subscription> subscriptions = new ArrayList<>();;
 
     @OneToMany(mappedBy = "user")
-    private List<Card> cards;
+    private List<Card> cards = new ArrayList<>();
 
     //CONSTRUCTORS
     public User() {
